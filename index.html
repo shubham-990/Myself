@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing & Design Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-elements">
+        <div class="bg-grid-pattern"></div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="noise-overlay"></div>
+    </div>
+    <main class="hub-container">
+        <header class="hub-header">
+            <div class="header-brand">
+                <span class="brand-name">SM.</span>
+                <div class="header-hint-container">
+                    <p id="nav-hint" class="nav-hint-text">Select a path to explore...</p>
+                </div>
+            </div>
+            <div class="header-meta">
+                <div class="status-indicator">
+                    <span class="dot"></span>
+                    <span>Available</span>
+                </div>
+                <div class="hub-clock" id="clock">00:00:00</div>
+                <button class="theme-btn" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <section class="minimal-hero">
+            <div class="hero-content">
+                <div class="profile-info">
+                    <div class="hero-label">Creative Partner</div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Shubham</span>
+                        <span class="title-line">Mistry</span>
+                    </h1>
+                    <p class="hero-subtitle" id="typing-role">Digital Marketer • 3D Designer • UI/UX Specialist</p>
+                    
+                    <div class="hero-profile-anchor">
+                        <div class="anchor-image">
+                            <div class="interactive-face">
+                                <div class="face-base">
+                                    <div class="eye eye-left">
+                                        <div class="pupil"></div>
+                                    </div>
+                                    <div class="eye eye-right">
+                                        <div class="pupil"></div>
+                                    </div>
+                                    <div class="mouth"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anchor-details">
+                            <span class="anchor-name">SM. STUDIO</span>
+                            <span class="anchor-status">EST. 2019</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="minimal-nav">
+                    <button class="minimal-nav-item" data-panel="about" data-hint="Discover the story, the drive, and the human behind the pixels.">
+                        <span class="nav-index">01</span>
+                        <span class="nav-text">About</span>
+                    </button>
+                    <button class="minimal-nav-item" data-panel="skills" data-hint="The toolkit I use to turn coffee into digital experiences.">
+                        <span class="nav-index">02</span>
+                        <span class="nav-text">Expertise</span>
+                    </button>
+                    <button class="minimal-nav-item" data-panel="work" data-hint="A curated gallery of my favorite digital experiments and successes.">
+                        <span class="nav-index">03</span>
+                        <span class="nav-text">Selected Works</span>
+                    </button>
+                    <button class="minimal-nav-item" data-panel="contact" data-hint="Let's start a conversation that could lead to something great.">
+                        <span class="nav-index">04</span>
+                        <span class="nav-text">Connect</span>
+                    </button>
+                </nav>
+            </div>
+        </section>
+
+        <footer class="minimal-footer">
+            <div class="footer-left">
+                <div class="location">Based in New York</div>
+            </div>
+            <div class="footer-right">
+                <div class="social-minimal">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Behance</a>
+                    <a href="#">Dribbble</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div id="panel-overlay" class="panel-overlay"></div>
+    
+    <aside id="side-panel" class="side-panel">
+        <button class="panel-close"><i class="fas fa-chevron-left"></i> BACK TO HUB</button>
+        <div id="panel-content" class="panel-content">
+            <!-- Content injected via JS -->
+        </div>
+    </aside>
+
+    <!-- Templates -->
+    <template id="about-template">
+        <div class="panel-inner">
+            <h2 class="panel-title">The Story So Far</h2>
+            <div class="panel-bio-grid">
+                <div class="bio-text">
+                    <p class="panel-bio">
+                        With over 5 years in the digital ecosystem, I blend data-driven marketing strategies with high-end visual design. My journey started in traditional marketing, but my passion for technology led me to master Blender, UI/UX, and Frontend Development.
+                    </p>
+                    <p class="panel-bio">
+                        I believe that great design is not just how it looks, but how it works and converts. By bridging the gap between aesthetics and performance, I help brands tell compelling stories that resonate in a crowded digital landscape.
+                    </p>
+                </div>
+                <div class="bio-stats">
+                    <div class="bio-stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years of Experience</span>
+                    </div>
+                    <div class="bio-stat-item">
+                        <span class="stat-number">120+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="bio-stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-header">
+                    <h3>Professional Milestones</h3>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header-meta">
+                            <h3>Senior Digital Strategist</h3>
+                            <span class="timeline-company">Elevate Agency</span>
+                        </div>
+                        <p class="timeline-date">2021 - Present</p>
+                        <p>Leading multi-channel campaigns and 3D brand visualizations for global tech companies. Reduced client acquisition costs by an average of 35% through optimized funnel design.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header-meta">
+                            <h3>UI/UX & Graphic Designer</h3>
+                            <span class="timeline-company">Creative Pulse</span>
+                        </div>
+                        <p class="timeline-date">2019 - 2021</p>
+                        <p>Focused on creating intuitive user experiences and cohesive brand identities for startups. Designed 15+ mobile applications and 40+ brand identities from the ground up.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header-meta">
+                            <h3>Marketing Specialist</h3>
+                            <span class="timeline-company">MarketSphere</span>
+                        </div>
+                        <p class="timeline-date">2017 - 2019</p>
+                        <p>Developed SEO strategies and managed social media growth for various e-commerce brands. Scaled an organic Instagram following from 0 to 50k in under 12 months.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="personal-interests">
+                <h4>Beyond the Screen</h4>
+                <div class="interest-tags">
+                    <span><i class="fas fa-camera"></i> Photography</span>
+                    <span><i class="fas fa-gamepad"></i> Gaming</span>
+                    <span><i class="fas fa-mountain"></i> Hiking</span>
+                    <span><i class="fas fa-book"></i> Sci-Fi Literature</span>
+                    <span><i class="fas fa-coffee"></i> Specialty Coffee</span>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="skills-template">
+        <div class="panel-inner">
+            <h2 class="panel-title">Technical Expertise</h2>
+            <div class="skills-grid-new">
+                <div class="skills-column">
+                    <div class="skills-category">
+                        <h4><i class="fas fa-chart-line"></i> Digital Marketing</h4>
+                        <div class="skill-tags-minimal">
+                            <span>SEO & SEM</span>
+                            <span>Growth Hacking</span>
+                            <span>Funnel Optimization</span>
+                            <span>Social Ads (FB/IG/LI)</span>
+                            <span>Google Analytics 4</span>
+                            <span>Conversion Rate Optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4><i class="fas fa-palette"></i> Design & Creative</h4>
+                        <div class="skill-tags-minimal">
+                            <span>UI/UX Design</span>
+                            <span>3D Modeling (Blender)</span>
+                            <span>Visual Storytelling</span>
+                            <span>Brand Identity</span>
+                            <span>Motion Graphics</span>
+                            <span>Adobe Creative Suite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-column">
+                    <div class="skills-category">
+                        <h4><i class="fas fa-code"></i> Engineering</h4>
+                        <div class="skill-tags-minimal">
+                            <span>Frontend Dev (HTML/CSS/JS)</span>
+                            <span>React.js</span>
+                            <span>Three.js (3D on Web)</span>
+                            <span>Responsive Design</span>
+                            <span>Git / Version Control</span>
+                            <span>API Integration</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h4><i class="fas fa-tools"></i> Tools of the Trade</h4>
+                        <div class="skill-tags-minimal">
+                            <span>Figma</span>
+                            <span>Blender</span>
+                            <span>Spline</span>
+                            <span>VS Code</span>
+                            <span>HubSpot</span>
+                            <span>Notion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-section">
+                <h4>Currently Learning</h4>
+                <div class="learning-list">
+                    <div class="learning-item">
+                        <span class="learning-tag">Unreal Engine 5</span>
+                        <p>Real-time architectural visualization and interactive experiences.</p>
+                    </div>
+                    <div class="learning-item">
+                        <span class="learning-tag">AI Integration</span>
+                        <p>Leveraging LLMs for automated content creation and data analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="work-template">
+        <div class="panel-inner">
+            <h2 class="panel-title">Selected Works</h2>
+            <div class="work-grid">
+                <div class="work-card">
+                    <div class="work-img-container">
+                        <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800" alt="CryptoBrand">
+                        <div class="work-overlay">
+                            <a href="#" class="view-project">VIEW CASE STUDY <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <div class="work-meta">
+                            <span class="work-type mkt">Marketing</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h3>Nexus DeFi Ecosystem</h3>
+                        <p>Comprehensive brand identity and 360° growth strategy for a decentralized finance protocol. Achieved $5M in total value locked within the first quarter of launch.</p>
+                        <div class="work-tags">
+                            <span>Growth Strategy</span><span>3D Identity</span><span>Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-img-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="EcoFlow">
+                        <div class="work-overlay">
+                            <a href="#" class="view-project">VIEW CASE STUDY <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <div class="work-meta">
+                            <span class="work-type dsn">UI/UX</span>
+                            <span class="work-year">2023</span>
+                        </div>
+                        <h3>EcoFlow Dashboard</h3>
+                        <p>A data-heavy analytics platform for monitoring renewable energy consumption. Focused on simplifying complex data visualizations for B2B stakeholders.</p>
+                        <div class="work-tags">
+                            <span>Data Viz</span><span>Figma</span><span>React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-img-container">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" alt="3D Product">
+                        <div class="work-overlay">
+                            <a href="#" class="view-project">VIEW CASE STUDY <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <div class="work-meta">
+                            <span class="work-type dev">3D Design</span>
+                            <span class="work-year">2022</span>
+                        </div>
+                        <h3>Lumina Watch 3D</h3>
+                        <p>High-fidelity 3D product visualization and interactive web-based configurator. Created using Blender and integrated with Three.js for a seamless web experience.</p>
+                        <div class="work-tags">
+                            <span>Blender</span><span>Three.js</span><span>E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="contact-template">
+        <div class="panel-inner">
+            <h2 class="panel-title">Let's Connect</h2>
+            <div class="contact-grid-new">
+                <div class="contact-info-new">
+                    <p class="panel-bio">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                    
+                    <div class="contact-details-minimal">
+                        <div class="detail-item-new">
+                            <span class="detail-label">Email</span>
+                            <a href="mailto:hello@shubhammistry.com" class="detail-value">hello@shubhammistry.com</a>
+                        </div>
+                        <div class="detail-item-new">
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value">New York, NY (UTC-5)</span>
+                        </div>
+                        <div class="detail-item-new">
+                            <span class="detail-label">Socials</span>
+                            <div class="social-links-minimal">
+                                <a href="#">LinkedIn</a>
+                                <a href="#">Behance</a>
+                                <a href="#">Dribbble</a>
+                                <a href="#">Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="contact-form" class="panel-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Service Interested In</label>
+                            <select>
+                                <option>Digital Marketing</option>
+                                <option>3D Design</option>
+                                <option>UI/UX Design</option>
+                                <option>Full Suite</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Project Details</label>
+                            <textarea placeholder="Tell me about your project goals..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="panel-submit-new">START A CONVERSATION <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
