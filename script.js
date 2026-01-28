@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Supabase Configuration
+    const SUPABASE_URL = 'https://skeuorrxudxbtpppeawu.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrZXVvcnJ4dWR4YnRwcHBlYXd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk1OTc0MjgsImV4cCI6MjA4NTE3MzQyOH0.V4Dkt4iyHWt6x0Dicw29krKt7NA8R4U9l14RVbeh84Q';
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
     // 1. Clock functionality
     function updateClock() {
         const clockElement = document.getElementById('clock');
@@ -133,20 +138,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Contact Form
         const form = panelContent.querySelector('#contact-form');
+        const statusDiv = panelContent.querySelector('#form-status');
         if (form) {
-            form.addEventListener('submit', (e) => {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const btn = form.querySelector('button');
-                const originalText = btn.textContent;
-                btn.textContent = 'MESSAGE SENT SUCCESSFULLY!';
-                btn.style.background = '#10b981';
+                const originalText = btn.innerHTML;
+                
+                // Disable button and show loading state
                 btn.disabled = true;
-                form.reset();
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }, 3000);
+                btn.innerHTML = '<span>PROCESSING...</span>';
+                
+                const formData = new FormData(form);
+                const newLead = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    company: formData.get('company'),
+                    phone: formData.get('phone'),
+                    createdAt: new Date().toISOString()
+                };
+
+                try {
+                    const { error } = await supabaseClient.from('leads').insert([newLead]);
+                    if (error) throw error;
+
+                    // Success state
+                    btn.innerHTML = 'MESSAGE SENT! <i class="fas fa-check"></i>';
+                    btn.style.background = '#10b981';
+                    if (statusDiv) {
+                        statusDiv.textContent = 'Success! Your details have been sent.';
+                        statusDiv.className = 'form-status-msg success active';
+                    }
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        if (statusDiv) statusDiv.classList.remove('active');
+                    }, 4000);
+                    
+                } catch (err) {
+                    console.error('Submission error:', err);
+                    btn.innerHTML = 'ERROR SENDING <i class="fas fa-exclamation-triangle"></i>';
+                    btn.style.background = '#ef4444';
+                    if (statusDiv) {
+                        statusDiv.textContent = 'Oops! Something went wrong. Please try again.';
+                        statusDiv.className = 'form-status-msg error active';
+                    }
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        if (statusDiv) statusDiv.classList.remove('active');
+                    }, 4000);
+                }
             });
         }
 
@@ -227,3 +274,4 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') closePanel();
     });
 });
+
