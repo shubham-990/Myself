@@ -118,7 +118,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem 4rem; /* Slightly reduced top/bottom padding */
+    padding: 1rem 4rem;
     max-width: 1600px;
     margin: 0 auto;
     position: relative;
@@ -250,7 +250,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .header-brand {
@@ -339,7 +339,7 @@ body {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .hero-content {
@@ -362,11 +362,11 @@ body {
 }
 
 .hero-title {
-    font-size: 6.5rem; /* Reduced from 7.5rem for better fit */
+    font-size: 5.5rem;
     font-weight: 800;
     letter-spacing: -0.05em;
     line-height: 0.85;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--text-main);
 }
 
@@ -388,15 +388,15 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-muted);
     font-weight: 500;
     max-width: 500px;
     line-height: 1.5;
-    margin-bottom: 2.5rem; /* Reduced from 4rem */
+    margin-bottom: 1.8rem;
     opacity: 0;
     animation: fade-in-up 0.8s 0.4s forwards;
-    min-height: 2.1em; /* Reserve space for typing text */
+    min-height: 2.1em;
     display: flex;
     align-items: center;
 }
@@ -479,7 +479,7 @@ body {
 }
 
 .nav-text {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), color 0.4s;
@@ -519,7 +519,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0;
+    padding: 1rem 0;
     border-top: 1px solid var(--border);
     flex-shrink: 0;
 }
