@@ -616,7 +616,7 @@ body {
     }
 
     .hero-profile-anchor {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .minimal-nav { 
@@ -624,11 +624,15 @@ body {
         border-left: none; 
         padding-top: 2rem;
         border-top: 1px solid var(--border);
+        width: 100%;
+        align-items: flex-start;
     }
 
     .minimal-nav-item {
-        justify-content: center;
+        justify-content: flex-start;
         padding: 1rem 0;
+        width: 100%;
+        text-align: left;
     }
 
     .minimal-nav-item::before {
@@ -663,10 +667,41 @@ body {
 
     .panel-inner {
         padding: 2rem;
+        margin: 0;
+        max-width: 100%;
     }
 
     .panel-title {
         font-size: 2.5rem;
+        text-align: left;
+    }
+
+    .panel-bio-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .bio-stats {
+        padding-left: 0;
+        border-left: none;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .skills-grid-new {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .work-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .learning-list {
+        grid-template-columns: 1fr;
     }
 }
 
