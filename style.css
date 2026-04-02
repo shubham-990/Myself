@@ -1249,3 +1249,47 @@ body {
     .panel-title { font-size: 2.5rem; }
     .panel-content { padding: 0 1.5rem 4rem; }
 }
+
+/* Work In Development Styles */
+.work-development {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px dashed var(--border);
+    text-align: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.dev-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.6;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 0.4; }
+    100% { transform: scale(1); opacity: 0.6; }
+}
+
+.work-development p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.status-badge {
+    padding: 0.4rem 1rem;
+    background: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    border-radius: 100px;
+}

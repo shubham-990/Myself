@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Supabase Configuration
-    const SUPABASE_URL = 'https://skeuorrxudxbtpppeawu.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrZXVvcnJ4dWR4YnRwcHBlYXd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk1OTc0MjgsImV4cCI6MjA4NTE3MzQyOH0.V4Dkt4iyHWt6x0Dicw29krKt7NA8R4U9l14RVbeh84Q';
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // Configuration
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxEDx7381Xu7Ij3bMLBaIYhVS-E1mpEHd2qriMiXZEVaS36CRLrB945HStOFME51jK4PA/exec';
 
     // 1. Clock functionality
     function updateClock() {
@@ -159,14 +157,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 try {
-                    const { error } = await supabaseClient.from('leads').insert([newLead]);
-                    if (error) throw error;
+                    // Send to Google Sheets (using text/plain via stringified JSON to avoid CORS preflight)
+                    await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        cache: 'no-cache',
+                        body: JSON.stringify(newLead)
+                    });
 
                     // Success state
                     btn.innerHTML = 'MESSAGE SENT! <i class="fas fa-check"></i>';
                     btn.style.background = '#10b981';
                     if (statusDiv) {
-                        statusDiv.textContent = 'Success! Your details have been sent.';
+                        statusDiv.textContent = 'Success! Your details have been sent to Google Sheets.';
                         statusDiv.className = 'form-status-msg success active';
                     }
                     form.reset();
